@@ -34,19 +34,21 @@ SET (LIBRARY_OUTPUT_PATH "${MAINFOLDER}/lib")
 #
 SET (CMAKE_MODULE_PATH "${MAINFOLDER}/tools/share/cmake")
 include_directories("${MAINFOLDER}/include")
-
+include_directories("${MAINFOLDER}/thirdparty/include")
 
 #
 # Locate Project Prerequisites
 #
-IF(WIN32)
-    set(GTEST_ROOT "${MAINFOLDER}/thirdparty")
-    set(GMOCK_ROOT "${MAINFOLDER}/thirdparty")
-endif()
-find_package(GTEST REQUIRED gtest>=1.7.0)
-include_directories(${GTEST_INCLUDE_DIRS})
-find_package(GMOCK REQUIRED gmock>=1.7.0)
-include_directories(${GMOCK_INCLUDE_DIRS})
+#IF(WIN32)
+#    set(GTEST_ROOT "${MAINFOLDER}/thirdparty")
+#    set(GMOCK_ROOT "${MAINFOLDER}/thirdparty")
+#endif()
+#find_package(GTEST REQUIRED gtest>=1.7.0)
+#include_directories(${GTEST_INCLUDE_DIRS})
+#find_package(GMOCK REQUIRED gmock>=1.7.0)
+#include_directories(${GMOCK_INCLUDE_DIRS})
+
+
 
 #
 # Add Build Targets

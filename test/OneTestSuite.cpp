@@ -1,25 +1,16 @@
 //
 // Created by nguyentd on 4/23/2015.
 //
+#include "catch.hpp"
 
-#include <gtest/gtest.h>
 
-class OneTest : public ::testing::Test {
-
-public:
-    OneTest() { }
-
-    virtual void SetUp() {
-    }
-
-    virtual void TearDown() {
-    }
-};
-
-TEST_F(OneTest, PassTest) {
-    EXPECT_TRUE(true);
+unsigned int Factorial(unsigned int number) {
+    return number <= 1 ? number : Factorial(number - 1) * number;
 }
 
-TEST_F(OneTest, FailTest){
-    EXPECT_TRUE(false);
+TEST_CASE("Factorials are computed", "[factorial]") {
+    REQUIRE(Factorial(1) == 1);
+    REQUIRE(Factorial(2) == 2);
+    REQUIRE(Factorial(3) == 6);
+    REQUIRE(Factorial(10) == 3628800);
 }
